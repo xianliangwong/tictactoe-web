@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
+
+:root {
+  --dark-gray: #1a2a32;
+  --gray: #2e4756;
+  --turquiose: #3cc4bf;
+  --yellow: #f2b147;
+  --light-gray: #d3d3d3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  list-style: none;
+  font-family: "Montserrat";
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--dark-gray);
+}
+
+body {
+  padding: 90px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: 50px repeat(3, 80px) 60px;
+  gap: 5px;
+}
+
+/* css for the turn statement  */
+
+.turn {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-self: center;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.turn span {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  animation: 0.6s ease-in-out turn-icon-animation;
+}
+
+@keyframes turn-icon-animation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.turn p {
+  font-size: 14px;
+  animation: 0.6s ease-in-out turn-text-animation;
+}
+
+@keyframes turn-text-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+.box-play-field {
+  background-color: var(--gray);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+
+.box-play-field span {
+  font-size: 50px;
+}
+
+.box-play-field:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+
+/* css for drop down menu */
+
+.menu {
+  position: relative;
+}
+
+.items {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  right: 0px;
+  background-color: #203139;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid transparent;
+}
+
+.items button {
+  /*   make background color transparent so that it takes the body backgroundcolor  */
+
+  background-color: transparent;
+  color: white;
+  padding: 8px;
+}
+
+.items button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.menu-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(211, 211, 211, 0.05);
+  /* create a border and make it round */
+  border: 2px solid transparent;
+}
+
+/* shared utility css class  */
+
+.hidden {
+  display: none !important;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
+}
+
+.border {
+  border: 1px solid rgba(211, 211, 211, 0.4) !important;
+}
+
+.turquoise {
+  color: var(--turquiose);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+/* css for score */
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+}
+
+.score p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.score span {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* winning screen css style */
+
+.winning-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.winning-screen-content {
+  height: 150px;
+  width: 100%;
+  max-width: 300px; /* for when the viewport is bigger than 300px in web view */
+  background-color: #2a4544;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin: 10px;
+}
+
+.winning-screen-content button {
+  padding: 10px;
+  background-color: var(--turquiose);
+  color: #2a4544;
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    width: 490px;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 50px repeat(3, 150px) 60px;
+    gap: 20px;
+  }
+}

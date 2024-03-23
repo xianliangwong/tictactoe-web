@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <title>TikTacToeGame</title>
+  </head>
+  <body>
+    <main>
+      <div class="grid-container">
+        <!-- turn indicator  -->
+        <div class="turn yellow" id="turn1" data-id="turn">
+          <span class="material-symbols-outlined"> close </span>
+          <p>Player 1, you're up!</p>
+        </div>
+        <!--Drop down menu-->
+        <div class="menu" data-id="menu">
+          <button class="menu-button" data-id="menu-button">
+            <p>Actions</p>
+
+            <span class="material-symbols-outlined"> arrow_drop_down </span>
+          </button>
+
+          <div class="items border hidden" data-id="menu-items">
+            <button data-id="reset-button">Reset</button>
+            <button data-id="new-round-btn">New Round</button>
+          </div>
+        </div>
+
+        <div class="box-play-field shadow" id="1" data-id="square"></div>
+        <div class="box-play-field shadow" id="2" data-id="square"></div>
+        <div class="box-play-field shadow" id="3" data-id="square"></div>
+        <div class="box-play-field shadow" id="4" data-id="square"></div>
+        <div class="box-play-field shadow" id="5" data-id="square"></div>
+        <div class="box-play-field shadow" id="6" data-id="square"></div>
+        <div class="box-play-field shadow" id="7" data-id="square"></div>
+        <div class="box-play-field shadow" id="8" data-id="square"></div>
+        <div class="box-play-field shadow" id="9" data-id="square"></div>
+
+        <!-- scoreboard -->
+        <div class="score shdaow" style="background-color: var(--turquiose)">
+          <p>Player 1</p>
+          <span data-id="p1-wins">0 Wins</span>
+        </div>
+        <div class="score" style="background-color: var(--light-gray)">
+          <p>Ties</p>
+          <span data-id="total-ties">0</span>
+        </div>
+        <div class="score" style="background-color: var(--yellow)">
+          <p>Player 2</p>
+          <span data-id="p2-wins">0 Wins</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- winning screen -->
+    <div class="winning-screen hidden" data-id="winning-screen">
+      <div class="winning-screen-content" data-id="winning-screen-content">
+        <p data-id="win-screen-text">Player 1 wins !</p>
+        <button data-id="win-screen-btn">Play again</button>
+      </div>
+    </div>
+
+    <!-- js script  -->
+    <!-- type="module", to allow ES6 syntax and modules to handle imports and export -->
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
