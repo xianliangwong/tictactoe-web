@@ -12,6 +12,10 @@ export default class Store {
     this.player = player;
   }
 
+  //this return object with two properties (playerWithStats and ties)
+  //playerWithStats is an array, when u used map, it will return an array
+  //note that this.player is an array with player1 and player2's info
+  //this info can refer back to playerAttribute array created in index.js
   get stats() {
     const state = this.#getState();
 
